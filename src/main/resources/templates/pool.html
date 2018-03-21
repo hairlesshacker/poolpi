@@ -18,10 +18,10 @@ if(typeof(EventSource) !== "undefined") {
     alertedAlready = false;
     source.onmessage = function(event) {
         document.getElementById("temperature").innerHTML = event.data ;
-        floatTemp = parseFloat(event.data);
-        if (floatTemp > 99 && !alertedAlready) {
-          alert ("Hot Tub Time!");
-          alertedAlready=true;
+        //floatTemp = parseFloat(event.data);
+        //if (floatTemp > 99 && !alertedAlready) {
+        //  alert ("Hot Tub Time!");
+        //  alertedAlready=true;
         }
      };
 } }
