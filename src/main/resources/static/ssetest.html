@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+function sendRequest(){
+if(typeof(EventSource) !== "undefined") {
+    var source = new EventSource("/sseTemp");
+    source.onmessage = function(event) {
+        document.getElementById("sseDiv").innerHTML = event.data ;
+     };
+} else {
+    document.getElementById("sseDiv").innerHTML =
+                     "Your browser does not support server-sent events.";
+}
+}
+</script>
+
+<link rel="stylesheet" href="odometer-theme-train-station.css" />
+<link rel="stylesheet" href="pc-pool.css" />
+<link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)" href="mobile-pool.css" />
+<script src="odometer.js"></script>
+</head>
+<body onLoad="sendRequest()">
+
+<h1>Sse client</h1>
+
+<div class="odometer-theme"><div id="sseDiv" class="odometer"></div> &#176; F</div>
+
+
+
+</body>
+</html>

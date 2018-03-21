@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="pc-pool.css" />
+<link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)" href="mobile-pool.css" />
+
+<style>
+</style>
+</head>
+<body>
+
+<h1>Pool Status</h1>
+<p>
+<span class="msg" th:text="${state}"></span>
+</p>
+
+
+<table align="center" border="1">
+<tr>
+  <td>Pump</td>
+  <td th:text="${pump}"></td>
+</tr>
+<tr>
+  <td>Valves</td>
+  <td th:text="${valve}"></td>
+</tr>
+<tr>
+  <td>Heat</td>
+  <td th:text="${heat}"></td>
+</tr>
+<tr>
+  <td>Temp</td>
+  <td th:text="${temp}"></td>
+</tr>
+<tr>
+  <td>Spencer</td>
+  <td th:text="${spencer}"></td>
+</tr>
+<tr>
+  <td>Spa Blower</td>
+  <td th:text="${bubbles}"></td>
+</tr>
+</table>
+<p><a href="/">Home</a></p>
+</body>
+</html>
+

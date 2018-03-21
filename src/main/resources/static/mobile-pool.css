@@ -1,0 +1,67 @@
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 60px;
+}
+
+p {
+    font-family: verdana;
+    font-size: 40px;
+    text-align: center;
+}
+
+.msg {
+    font-style:italic;
+}
+
+.button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 50px 24px;
+    border: 1px solid #274fa1;
+    border-radius: 8px;
+    background: #389dc2;
+    background: -webkit-gradient(linear, left top, left bottom, from(#389dc2), to(#265099));
+    background: -moz-linear-gradient(top, #389dc2, #265099);
+    background: linear-gradient(to bottom, #389dc2, #265099);
+    text-shadow: #591717 1px 1px 1px;
+    font: normal normal bold 60px arial;
+    color: #ffffff;
+    text-decoration: none;
+    height: 75px;
+    width: 400px;
+}
+.button:hover,
+.button:focus {
+    border: 1px solid #3e7eff;
+    background: #43bce9;
+    background: -webkit-gradient(linear, left top, left bottom, from(#43bce9), to(#2e60b8));
+    background: -moz-linear-gradient(top, #43bce9, #2e60b8);
+    background: linear-gradient(to bottom, #43bce9, #2e60b8);
+    color: #ffffff;
+    text-decoration: none;
+}
+.button:active {
+    background: #225e74;
+    background: -webkit-gradient(linear, left top, left bottom, from(#225e74), to(#265099));
+    background: -moz-linear-gradient(top, #225e74, #265099);
+    background: linear-gradient(to bottom, #225e74, #265099);
+}
+.odometer-theme {
+    text-align: center;
+    font-size: 80px;
+    line-height: 180px;
+}
+table, th, td {
+    border: 1px solid blue;
+    border-collapse: collapse;
+    padding: 10px;
+    font-size: 60px;
+}
+
+

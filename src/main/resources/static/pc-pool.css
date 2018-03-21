@@ -1,0 +1,94 @@
+html,
+body {
+		margin:0;
+		padding:0;
+		height:100%;
+		background-color: lightblue;
+	}
+	#container {
+		min-height:100%;
+		position:relative;
+	}
+	#header {
+		background-color: lightblue;
+		padding:0px;
+	}
+	#body {
+		padding:0px;
+		padding-bottom:50px;	/* Height of the footer */
+	}
+	#footer {
+		position:absolute;
+		bottom:0;
+		width:100%;
+		height:80px;			/* Height of the footer */
+	}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+    text-align: center;
+}
+.msg {
+    font-style:italic;
+    color: red;
+    text-align: center;
+}
+.status-link {
+		width: 100%;
+		text-align: center;
+}
+
+.button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px 24px;
+    border: 1px solid #274fa1;
+    border-radius: 8px;
+    background: #389dc2;
+    background: -webkit-gradient(linear, left top, left bottom, from(#389dc2), to(#265099));
+    background: -moz-linear-gradient(top, #389dc2, #265099);
+    background: linear-gradient(to bottom, #389dc2, #265099);
+    text-shadow: #591717 1px 1px 1px;
+    font: normal normal bold 20px arial;
+    color: #ffffff;
+    text-decoration: none;
+    height: 30px;
+    width: 130px;
+}
+.button:hover,
+.button:focus {
+    border: 1px solid #3e7eff;
+    background: #43bce9;
+    background: -webkit-gradient(linear, left top, left bottom, from(#43bce9), to(#2e60b8));
+    background: -moz-linear-gradient(top, #43bce9, #2e60b8);
+    background: linear-gradient(to bottom, #43bce9, #2e60b8);
+    color: #ffffff;
+    text-decoration: none;
+}
+.button:active {
+    background: #225e74;
+    background: -webkit-gradient(linear, left top, left bottom, from(#225e74), to(#265099));
+    background: -moz-linear-gradient(top, #225e74, #265099);
+    background: linear-gradient(to bottom, #225e74, #265099);
+}
+.odometer-theme {
+    font-size: 40px;
+    line-height: 80px;
+    text-align: center;
+}
+.hidden {
+    display: none;
+ }
+    
+table, th, td {
+    border: 1px solid #274fa1;
+    border-collapse: collapse;
+    padding: 10px;
+}

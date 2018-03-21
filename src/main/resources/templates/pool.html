@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<script>
+/*<![CDATA[*/
+function doStuff(){
+  window.history.replaceState("string", "Title", "/"+window.location.href.substring(window.location.href.lastIndexOf('/') + 1).split("?")[0]);
+  updateTemp();
+}
+function bubbleClick(){
+  document.getElementById("action").value="bubbles";
+  document.getElementById("form").submit();
+}
+
+function updateTemp(){
+if(typeof(EventSource) !== "undefined") {
+    var source = new EventSource("/sseTemp");
+    alertedAlready = false;
+    source.onmessage = function(event) {
+        document.getElementById("temperature").innerHTML = event.data ;
+        floatTemp = parseFloat(event.data);
+        if (floatTemp > 99 && !alertedAlready) {
+          alert ("Hot Tub Time!");
+          alertedAlready=true;
+        }
+     };
+} }
+/*]]>*/
+</script>
+<link rel="stylesheet" href="odometer-theme-train-station.css" />
+<link rel="stylesheet" href="pc-pool.css" />
+<link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)" href="mobile-pool.css" />
+<script src="odometer.js"></script>
+
+<style>
+</style>
+</head>
+<body onLoad="doStuff()">
+<div id="container">
+	<div id="header">
+		<h1>Pool Control</h1>
+	</div>
+	<div id="body">
+		<p><span class="msg" th:text="${message}"></span></p>
+		
+		<table align="center">
+		<tr><td><b>Mode:</b></td><td th:text="${state}"></td></tr>
+		</table>
+		<p><div class="odometer-theme"><div id="temperature" class="odometer" th:text="${temp}" ></div> &#176; F</div></p>
+		
+		
+		<form id="form" action="/handler" method="POST">
+		
+		<input id="action" type="hidden" name="action" th:value="${startstop}"/>
+		<p>
+		
+		<a class="button" href="#" onclick="document.forms[0].submit();return false;" th:text="${startstop}+ ' HotTub'"> </a>
+		</p>
+		</form>
+		<p>
+		<a th:class="${bubblestate}" onclick="bubbleClick();" href="#" th:text="'Bubbles ' +${bubbleson}"></a>
+		</p>
+	</div>
+	<div id="footer">
+		<p><a href="/status">Status</a></p>
+	</div>
+</div>
+</body>
+</html>
+
